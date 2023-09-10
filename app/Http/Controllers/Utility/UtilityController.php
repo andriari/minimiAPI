@@ -623,7 +623,7 @@ class UtilityController extends Controller
 			->select('content_id', 'fullname', 'total_content_count', 'email', 'user_uri', 'verified', 'follower_count', 'photo_profile', 'minimi_content_post.*')
 			->join('minimi_user_data', 'minimi_user_data.user_id', '=', 'minimi_content_post.user_id')
 			->where([
-				'.minimi_content_post.product_id' => $product_id,
+				'minimi_content_post.product_id' => $product_id,
 				'content_type' => 2,
 				'minimi_content_post.status' => 1,
 				'minimi_content_post.content_curated' => 1
