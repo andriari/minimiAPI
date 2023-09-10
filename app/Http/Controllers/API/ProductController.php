@@ -547,7 +547,7 @@ class ProductController extends Controller
 
     public function detailProduct(Request $request, $product_uri){
         $data = $request->all();
-		try {
+		//try {
 			if(empty($data['token'])){
                 $view_id=null;
             }else{
@@ -708,9 +708,9 @@ class ProductController extends Controller
                 $return['group_buy'] = app('App\Http\Controllers\API\GroupBuyController')->getGroupBuyProduct($query->product_id);
             }
             return response()->json(['code'=>200,'message'=>'success','data'=>$return]);    
-		} catch (QueryException $ex){
-            return response()->json(['code'=>4050,'message'=>'detail_product_failed']);
-		}
+		//} catch (QueryException $ex){
+        //    return response()->json(['code'=>4050,'message'=>'detail_product_failed']);
+		//}
     }
 
     public function loadContentPerProduct(Request $request, $product_uri){
